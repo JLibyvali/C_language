@@ -59,7 +59,8 @@ pointer return to user:
         |                  pointer returnd to user
         |
     Header pointer to next
- */
+
+*/
 
 typedef long Align;
 union header { // describe the block in list
