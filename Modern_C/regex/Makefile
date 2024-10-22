@@ -3,9 +3,6 @@ CFLAGS += -g -ggdb3 -O0 -Wall
 
 BUILD_DIR = build
 
-
-
-
 all : regex
 
 $(BUILD_DIR) : 

@@ -1,0 +1,38 @@
+[
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c11",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/server.o",
+      "server.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/server.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/server.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c11",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/client.o",
+      "client.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/client.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/client.o"
+  }
+]
