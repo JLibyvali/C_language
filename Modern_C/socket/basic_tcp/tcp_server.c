@@ -1,4 +1,5 @@
 #include "debug.h"
+#include "macro.h"
 
 #include <netinet/in.h>
 #include <stdio.h>
@@ -9,17 +10,14 @@
 #include <unistd.h>
 
 #define ARRLEN(arr) sizeof((arr)) / sizeof(arr[0])
+#define CLIENT_NUM  5
 
 int main(int argc, char **argv)
 {
-    int                serv_sock, clnt_sock;
+    int                serv_sock, clnt_sock, i = 0;
     struct sockaddr_in serv_addr, clnt_addr;
     socklen_t          clnt_sock_len;
-
-    char               msg[] = "Hello World.\n          \
-    22222222222222222222222222222222222222222222222222222\n     \
-    33333333333333333333333333333333333333333333333333333\n     \
-    4444444444444444444444444444444444444444444444444444444.\n";
+    char               buf[256] = {};
 
     if (argc != 2)
     {
@@ -41,21 +39,44 @@ int main(int argc, char **argv)
     serv_addr.sin_port        = htons(atoi(argv[1]));
 
     if (bind(serv_sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == -1)
-        Error("bing()");
+        Error("bind()");
 
     if (listen(serv_sock, 5) == -1)
+    {
         Error("listen()");
+    }
+    else
+    {
+
+        printf("Waiting for connection.............\n");
+    }
 
     clnt_sock_len = sizeof(clnt_addr);
-    clnt_sock     = accept(serv_sock, (struct sockaddr *)&clnt_addr, &clnt_sock_len);
+    // accept() will create a new socket for data transmission.
 
-    if (clnt_sock == -1)
-        Error("accept()");
+    for (; i < CLIENT_NUM; i++)
+    {
 
-    write(clnt_sock, msg, sizeof(msg));
+        clnt_sock = accept(serv_sock, (struct sockaddr *)&clnt_addr, &clnt_sock_len);
+        if (clnt_sock == -1)
+            Error("accept()");
 
-    close(clnt_sock);
+        printf(ANSI_FG_BLUE "Client %d connected.\n" ANSI_NONE, i);
+
+        // Echo server
+        int str_len = -1;
+        while ((str_len = read(clnt_sock, buf, sizeof(buf)) != 0))  // If client call `close()` the will be false.
+        {
+            write(clnt_sock, buf, sizeof(buf));
+        }
+
+        memset(buf, '\0', sizeof(buf));
+
+        printf(ANSI_FG_RED "Client %d quit connection.\n" ANSI_NONE, i);
+        close(clnt_sock);
+    }
+
+    printf(ANSI_FG_BLUE "Server quit.\n" ANSI_NONE);
     close(serv_sock);
-
     return 0;
 }

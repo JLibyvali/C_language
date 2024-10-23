@@ -1,4 +1,5 @@
 #include "debug.h"
+#include "macro.h"
 
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -8,12 +9,11 @@
 #include <sys/socket.h>
 #include <unistd.h>
 
-
 int main(int argc, char **argv)
 {
 
     char               buf[256] = {};
-    int                sock, i = 0;
+    int                sock;
     struct sockaddr_in addr;
 
     if (argc != 3)
@@ -34,18 +34,28 @@ int main(int argc, char **argv)
     if (connect(sock, (struct sockaddr *)&addr, sizeof(addr)) == -1)
         Error("connect()");
 
-    // TCP is stream oriented protocol ,
-    int read_len, times = 0;
-    while (read_len = read(sock, &buf[i++], 1))
+    printf("Connected.....................\n");
+
+    // TCP is stream oriented protocol
+    int len = 0;
+    while (1)
     {
-        if (read_len == -1)
-            Error("read()");
+        printf("Input msg (Q quit).\n");
+        scanf("%s", buf);
 
-        times++;
+        char *token = strtok(buf, " ");
+        if (!strcmp(token, "q") || !strcmp(token, "Q"))
+            break;
+
+        write(sock, buf, sizeof(buf));
+
+        char tmp[256] = {};
+        len           = read(sock, tmp, sizeof(tmp));
+        if (len)
+            printf(ANSI_FG_RED "Received message: %s\n" ANSI_NONE, tmp);
     }
-    printf("Message:%s.\n", buf);
-    printf("Times:%d.\n", times);
 
+    printf("Client exit.\n");
     close(sock);
 
     return 0;
