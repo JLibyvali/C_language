@@ -58,8 +58,13 @@ int main(int argc, char **argv)
     }
 
     // Read the whole file from server
-    while ((ret = read(sock, msg, 10)) > 0)
+    while (1)
     {
+
+        ret = read(sock, msg, MSG - 1);
+        if (ret <= 0)
+            break;
+
         msg[ret] = '\0';
         printf("Writing %d : %s\n", ret, msg);
 
@@ -71,7 +76,7 @@ int main(int argc, char **argv)
     fflush(fp);
 
     printf("Received all data.\n");
-    write(sock, "FIN", 4);
+    write(sock, "FIN", 3);
 
     fclose(fp);
     close(sock);

@@ -25,15 +25,12 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    // Creating socket
+    // socket init
     serv_sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
-
-    if (serv_sock == -1)
-        Error("socket()");
+    CHECK_RET(serv_sock, "socket()");
 
     // ### IMPORTANT struct must be set to all zero for align
     memset(&serv_addr, 0, sizeof(serv_addr));
-
     serv_addr.sin_family      = AF_INET;
     serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     serv_addr.sin_port        = htons(atoi(argv[1]));
@@ -53,6 +50,7 @@ int main(int argc, char **argv)
 
     clnt_sock_len = sizeof(clnt_addr);
     // accept() will create a new socket for data transmission.
+    // It's CLIENT_NUM socket queue
 
     for (; i < CLIENT_NUM; i++)
     {
@@ -67,11 +65,10 @@ int main(int argc, char **argv)
         int str_len = -1;
         while ((str_len = read(clnt_sock, buf, sizeof(buf)) != 0))  // If client call `close()` the will be false.
         {
-            write(clnt_sock, buf, sizeof(buf));
+            write(clnt_sock, buf, str_len);
         }
 
         memset(buf, '\0', sizeof(buf));
-
         printf(ANSI_FG_RED "Client %d quit connection.\n" ANSI_NONE, i);
         close(clnt_sock);
     }

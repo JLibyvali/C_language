@@ -6,7 +6,7 @@
       "-ggdb",
       "-O0",
       "-Wall",
-      "-std=c11",
+      "-std=c99",
       "-Iinclude",
       "-c",
       "-o",
@@ -24,7 +24,7 @@
       "-ggdb",
       "-O0",
       "-Wall",
-      "-std=c11",
+      "-std=c99",
       "-Iinclude",
       "-c",
       "-o",
@@ -42,7 +42,7 @@
       "-ggdb",
       "-O0",
       "-Wall",
-      "-std=c11",
+      "-std=c99",
       "-Iinclude",
       "-c",
       "-o",
@@ -60,7 +60,7 @@
       "-ggdb",
       "-O0",
       "-Wall",
-      "-std=c11",
+      "-std=c99",
       "-Iinclude",
       "-c",
       "-o",
@@ -78,7 +78,7 @@
       "-ggdb",
       "-O0",
       "-Wall",
-      "-std=c11",
+      "-std=c99",
       "-Iinclude",
       "-c",
       "-o",
@@ -96,7 +96,7 @@
       "-ggdb",
       "-O0",
       "-Wall",
-      "-std=c11",
+      "-std=c99",
       "-Iinclude",
       "-c",
       "-o",
@@ -106,5 +106,95 @@
     "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
     "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/half_close/half_client.c",
     "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/half_close/half_client.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/advanced_socket/adv_socket.o",
+      "advanced_socket/adv_socket.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/advanced_socket/adv_socket.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/advanced_socket/adv_socket.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/multi_process/server.o",
+      "multi_process/server.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/server.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/server.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/multi_process/client.o",
+      "multi_process/client.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/client.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/client.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/multi_process/io_server.o",
+      "multi_process/io_server.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/io_server.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/io_server.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/multi_process/io_client.o",
+      "multi_process/io_client.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/io_client.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/io_client.o"
   }
 ]

@@ -22,9 +22,8 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
-    if (sock == -1)
-        Error("socket()");
+    sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+    CHECK_RET(sock, "socket()");
 
     memset(&addr, 0, sizeof(addr));
     addr.sin_family      = AF_INET;

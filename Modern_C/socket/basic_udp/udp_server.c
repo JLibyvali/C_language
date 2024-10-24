@@ -24,9 +24,9 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    serv_sock = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP);
-    if (serv_sock == -1)
-        Error("socket()");
+    // socket init
+    serv_sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
+    CHECK_RET(serv_sock, "socket()");
 
     // Init socket address.
     memset(&serv_addr, 0, sizeof(serv_addr));
