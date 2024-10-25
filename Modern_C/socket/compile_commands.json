@@ -28,66 +28,12 @@
       "-Iinclude",
       "-c",
       "-o",
-      "BUILD/basic_tcp/tcp_client.o",
-      "basic_tcp/tcp_client.c"
+      "BUILD/advanced_socket/adv_socket.o",
+      "advanced_socket/adv_socket.c"
     ],
     "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
-    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/basic_tcp/tcp_client.c",
-    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/basic_tcp/tcp_client.o"
-  },
-  {
-    "arguments": [
-      "/usr/lib64/ccache/clang",
-      "-g",
-      "-ggdb",
-      "-O0",
-      "-Wall",
-      "-std=c99",
-      "-Iinclude",
-      "-c",
-      "-o",
-      "BUILD/basic_udp/udp_server.o",
-      "basic_udp/udp_server.c"
-    ],
-    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
-    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/basic_udp/udp_server.c",
-    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/basic_udp/udp_server.o"
-  },
-  {
-    "arguments": [
-      "/usr/lib64/ccache/clang",
-      "-g",
-      "-ggdb",
-      "-O0",
-      "-Wall",
-      "-std=c99",
-      "-Iinclude",
-      "-c",
-      "-o",
-      "BUILD/basic_udp/udp_client.o",
-      "basic_udp/udp_client.c"
-    ],
-    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
-    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/basic_udp/udp_client.c",
-    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/basic_udp/udp_client.o"
-  },
-  {
-    "arguments": [
-      "/usr/lib64/ccache/clang",
-      "-g",
-      "-ggdb",
-      "-O0",
-      "-Wall",
-      "-std=c99",
-      "-Iinclude",
-      "-c",
-      "-o",
-      "BUILD/half_close/half_server.o",
-      "half_close/half_server.c"
-    ],
-    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
-    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/half_close/half_server.c",
-    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/half_close/half_server.o"
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/advanced_socket/adv_socket.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/advanced_socket/adv_socket.o"
   },
   {
     "arguments": [
@@ -118,12 +64,66 @@
       "-Iinclude",
       "-c",
       "-o",
-      "BUILD/advanced_socket/adv_socket.o",
-      "advanced_socket/adv_socket.c"
+      "BUILD/basic_tcp/tcp_client.o",
+      "basic_tcp/tcp_client.c"
     ],
     "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
-    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/advanced_socket/adv_socket.c",
-    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/advanced_socket/adv_socket.o"
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/basic_tcp/tcp_client.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/basic_tcp/tcp_client.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/basic_udp/udp_client.o",
+      "basic_udp/udp_client.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/basic_udp/udp_client.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/basic_udp/udp_client.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/basic_udp/udp_server.o",
+      "basic_udp/udp_server.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/basic_udp/udp_server.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/basic_udp/udp_server.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/half_close/half_server.o",
+      "half_close/half_server.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/half_close/half_server.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/half_close/half_server.o"
   },
   {
     "arguments": [
@@ -154,24 +154,6 @@
       "-Iinclude",
       "-c",
       "-o",
-      "BUILD/multi_process/client.o",
-      "multi_process/client.c"
-    ],
-    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
-    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/client.c",
-    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/client.o"
-  },
-  {
-    "arguments": [
-      "/usr/lib64/ccache/clang",
-      "-g",
-      "-ggdb",
-      "-O0",
-      "-Wall",
-      "-std=c99",
-      "-Iinclude",
-      "-c",
-      "-o",
       "BUILD/multi_process/io_server.o",
       "multi_process/io_server.c"
     ],
@@ -190,11 +172,119 @@
       "-Iinclude",
       "-c",
       "-o",
+      "BUILD/io_multiplexing/server.o",
+      "io_multiplexing/server.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/io_multiplexing/server.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/io_multiplexing/server.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/multi_process/client.o",
+      "multi_process/client.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/client.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/client.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
       "BUILD/multi_process/io_client.o",
       "multi_process/io_client.c"
     ],
     "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
     "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/io_client.c",
     "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/io_client.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/io_multiplexing/client.o",
+      "io_multiplexing/client.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/io_multiplexing/client.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/io_multiplexing/client.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/io_multiplexing/pipe_test.o",
+      "io_multiplexing/pipe_test.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/io_multiplexing/pipe_test.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/io_multiplexing/pipe_test.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/io_multiplexing/select_test.o",
+      "io_multiplexing/select_test.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/io_multiplexing/select_test.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/io_multiplexing/select_test.o"
+  },
+  {
+    "arguments": [
+      "/usr/lib64/ccache/clang",
+      "-g",
+      "-ggdb",
+      "-O0",
+      "-Wall",
+      "-std=c99",
+      "-Iinclude",
+      "-c",
+      "-o",
+      "BUILD/multi_process/fork_test.o",
+      "multi_process/fork_test.c"
+    ],
+    "directory": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket",
+    "file": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/multi_process/fork_test.c",
+    "output": "/home/jlibyvali/Developer/projetcs/VSCode/C_language/Modern_C/socket/BUILD/multi_process/fork_test.o"
   }
 ]
