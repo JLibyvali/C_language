@@ -21,7 +21,7 @@ LDFLAGS = -Wl,-Map=$(BUILD)/Symbol.map
 
 OBJ_FILES := $(patsubst %.c,$(BUILD)/%.o,$(SRC_FILES))
 
-all : basic_tcp basic_udp half_tcp adv_socket multi_process io_multi_process io_multiplexing  epoll_level epoll_edge  multi_threads test
+all : basic_tcp basic_udp half_tcp adv_socket multi_process io_multi_process io_multiplexing  epoll_level epoll_edge  chat test
 
 # Create the contents
 $(BUILD)/%.o : %.c 
@@ -122,12 +122,12 @@ $(BUILD)/$(EPOLL)/edge_client : $(EPOLL_EDGE_CLIENT)
 	$(CC) $(CFLAGS) $< $(LDFLAGS) -o $@
 
 # Multi threads
-multi_threads : $(BUILD)/$(MULTI_THREADS)/server $(BUILD)/$(MULTI_THREADS)/client
+chat : $(BUILD)/$(MULTI_THREADS)/chat_server $(BUILD)/$(MULTI_THREADS)/chat_client
 
-$(BUILD)/$(MULTI_THREADS)/server : $(MULTI_THREADS_SERVER)
+$(BUILD)/$(MULTI_THREADS)/chat_server : $(CHAT_SERVER)
 	$(CC) $(CFLAGS) $< $(LDFLAGS) -o $@
 
-$(BUILD)/$(MULTI_THREADS)/client : $(MULTI_THREADS_CLIENT)
+$(BUILD)/$(MULTI_THREADS)/chat_client : $(CHAT_CLIENT)
 	$(CC) $(CFLAGS) $< $(LDFLAGS) -o $@
 
 
