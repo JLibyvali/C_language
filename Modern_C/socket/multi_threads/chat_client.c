@@ -19,11 +19,15 @@
 #define BUF_LEN   256
 #define NAME_SIZE 10
 
-static char *name = "[Default]";
-void        *write_buf(void *_sock);
-void        *read_buf(void *_sock);
+static char    *name = "[Default]";
+void           *write_buf(void *_sock);
+void           *read_buf(void *_sock);
 
-int          main(int argc, char **argv)
+bool            flag_read = false;
+pthread_cond_t  cond_read;
+pthread_mutex_t mut_read;
+
+int             main(int argc, char **argv)
 {
 
     if (argc != 3)
@@ -36,6 +40,10 @@ int          main(int argc, char **argv)
     struct sockaddr_in serv_addr;
     pthread_t          read_id, write_id;
     void              *thread_ret;
+
+    // init
+    pthread_mutex_init(&mut_read, NULL);
+    pthread_cond_init(&cond_read, NULL);
 
     // socket init
     sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
@@ -54,6 +62,9 @@ int          main(int argc, char **argv)
     pthread_join(write_id, &thread_ret);
     pthread_join(read_id, &thread_ret);
 
+    pthread_cond_destroy(&cond_read);
+    pthread_mutex_destroy(&mut_read);
+
     return 0;
 }
 
@@ -64,6 +75,7 @@ void *write_buf(void *_sock)
     char         send_msg[BUF_LEN + NAME_SIZE] = {};
     struct iovec vecs[0]                       = {};
     vecs[0].iov_len                            = BUF_LEN + NAME_SIZE;
+    vecs[0].iov_base                           = send_msg;
 
     while (1)
     {
@@ -78,9 +90,13 @@ void *write_buf(void *_sock)
         }
 
         snprintf(send_msg, BUF_LEN + NAME_SIZE, "%s %s", name, buf);
-
-        vecs[0].iov_base = send_msg;
         writev(sock, vecs, 1);
+
+        // notify read_thread to read;
+        pthread_mutex_lock(&mut_read);
+        flag_read = true;
+        pthread_cond_signal(&cond_read);
+        pthread_mutex_unlock(&mut_read);
 
         memset(buf, '\0', sizeof(buf));
     }
@@ -100,7 +116,15 @@ void *read_buf(void *_sock)
 
     while (1)
     {
-        str_len = readv(sock, vecs, 1);
+        // Wait after client write message
+        pthread_mutex_lock(&mut_read);
+        while (!flag_read)
+            pthread_cond_wait(&cond_read, &mut_read);
+
+        str_len   = readv(sock, vecs, 1);
+
+        flag_read = false;
+        pthread_mutex_unlock(&mut_read);
 
         if (str_len <= 0)
             break;
