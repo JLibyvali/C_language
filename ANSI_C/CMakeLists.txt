@@ -1,19 +1,13 @@
-cmake_minimum_required(VERSION 3.28)
-project(C_fromK_R LANGUAGES C)
+cmake_minimum_required ( VERSION 3.28 )
 
-set(CMAKE_C_STANDARD 11)
-set(CMAKE_BUILD_TYPE "Debug")
-set(SOURCES ${PROJECT_SOURCE_DIR}/prog.c)
+set ( SOURCES ./prog.c )
 
-set(HEADERS
-    ${PROJECT_SOURCE_DIR}/Prac2.h ${PROJECT_SOURCE_DIR}/Prac5.h
-    ${PROJECT_SOURCE_DIR}/Prac6.h ${PROJECT_SOURCE_DIR}/Prac7.h
-    ${PROJECT_SOURCE_DIR}/Prac8.h)
-
-message(STATUS "==================================================")
-
-message(STATUS "==================================================")
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+add_executable ( ANSI_C ${SOURCES} )
+target_include_directories (
+    ANSI_C
+    PRIVATE
+    ${CMAKE_CURRENT_LIST_DIR}
+)
 
 # linking math library
-target_link_libraries(${PROJECT_NAME} m)
+target_link_libraries ( ANSI_C m )
