@@ -25,3 +25,12 @@ add_executable ( bio_pipe
 add_executable ( pipe_syn
     Modern_C/IPC/pipe/pipe_syn.c
 )
+
+add_executable ( fifo_server
+    Modern_C/IPC/pipe/fifo_msg.h
+    Modern_C/IPC/pipe/fifo_server.c
+)
+add_executable ( fifo_client
+    Modern_C/IPC/pipe/fifo_msg.h
+    Modern_C/IPC/pipe/fifo_client.c
+)
