@@ -46,7 +46,7 @@ static void dic_add_keyval(dic *_in, keyval *_kv)
     _in->m_pairs[_in->m_length - 1] = _kv;
 }
 
-void dic_add(const dic *_in, const char *_key)
+void dic_add(dic *_in, char *_key, void *_value)
 {
     if (!_key)
     {
@@ -54,5 +54,17 @@ void dic_add(const dic *_in, const char *_key)
         abort();
     }
 
-    dic_add(_in, _key);
+    dic_add_keyval(_in, new_keyval(_key, _value));
+}
+
+void *dic_find(const dic *_in, const char *_key)
+{
+
+    for (int i = 0; i < _in->m_length; i++)
+    {
+        if (is_keymatch(_in->m_pairs[i], _key))
+            return _in->m_pairs[i]->m_value;
+    }
+
+    return m_dic_keynotfound;
 }

@@ -14,6 +14,6 @@ keyval *copy_keyval(const keyval *_in) {
 }
 void free_keyval(keyval *_in) { free(_in); }
 
-int is_match(const keyval *_src, const char *_key) {
+int is_keymatch(const keyval *_src, const char *_key) {
   return (!strcasecmp(_key, _src->m_key));
 }

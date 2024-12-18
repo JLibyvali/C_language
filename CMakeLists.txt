@@ -11,12 +11,22 @@ include_directories (
 )
 
 # C-style OOP programming
-add_executable ( c_oop )
-target_sources ( c_oop PRIVATE
+add_executable ( c_oop
     Modern_C/oop/dictionary.c
     Modern_C/oop/keyval.c
+    Modern_C/oop/point.c
+    Modern_C/oop/vtable.c
+    Modern_C/oop/private.c
     Modern_C/oop/user.c
 )
+target_compile_options ( c_oop PRIVATE
+    -fms-extensions
+)
+target_link_options ( c_oop PRIVATE
+    -lm )
+
+add_executable ( c_reference_count Modern_C/oop/refer.c )
+add_executable ( c_overlaod Modern_C/oop/overload.c )
 
 # Linux IPC
 add_executable ( bio_pipe
