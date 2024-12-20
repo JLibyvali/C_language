@@ -1,3 +1,4 @@
+#include "debug.h"
 #include "dictionary.h"
 #include "point.h"
 #include "private.h"
@@ -5,8 +6,9 @@
 
 #include <stdint.h>
 #include <stdio.h>
+#include <string.h>
 
-int main()
+int                     main()
 {
 
     printf("#################### Basic OOP #################\n");
