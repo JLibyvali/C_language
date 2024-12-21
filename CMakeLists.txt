@@ -32,6 +32,10 @@ include_directories (
     ./include
 )
 
+# ####################################################################################
+# TARGETS
+# ####################################################################################
+
 # C-style OOP programming
 add_executable ( c_oop
     Modern_C/oop/dictionary.c
@@ -45,18 +49,15 @@ target_compile_options ( c_oop PRIVATE -fms-extensions )
 target_link_options ( c_oop PRIVATE -lm )
 
 add_executable ( c_reference_count Modern_C/oop/refer.c )
-more_debug_info ( c_reference_count )
 
 add_executable ( c_overlaod Modern_C/oop/overload.c )
 add_executable ( c_reflection Modern_C/oop/reflection.c )
+more_debug_info ( c_reflection )
 
-# Linux IPC
-add_executable ( bio_pipe
-    Modern_C/IPC/pipe/bio_pipe.c
-)
-add_executable ( pipe_syn
-    Modern_C/IPC/pipe/pipe_syn.c
-)
+################ Linux IPC
+# pipe and fifo
+add_executable ( bio_pipe Modern_C/IPC/pipe/bio_pipe.c )
+add_executable ( pipe_syn Modern_C/IPC/pipe/pipe_syn.c )
 
 add_executable ( fifo_server
     Modern_C/IPC/pipe/fifo_msg.h
@@ -66,3 +67,15 @@ add_executable ( fifo_client
     Modern_C/IPC/pipe/fifo_msg.h
     Modern_C/IPC/pipe/fifo_client.c
 )
+
+# mmap()
+add_executable ( mmap_private Modern_C/IPC/memory/mmap_private.c )
+add_executable ( mmap_shared Modern_C/IPC/memory/mmap_shared.c )
+add_executable ( mmap_anonymous Modern_C/IPC/memory/mmap_anony.c )
+add_executable ( mprotect Modern_C/IPC/memory/mprotect.c )
+add_executable ( mlock Modern_C/IPC/memory/mlock.c )
+add_executable ( madvise Modern_C/IPC/memory/madvise.c )
+
+# message queue
+add_executable(mq_create Modern_C/IPC/msg_queue/mq_create.c)
+add_executable(mq_open Modern_C/IPC/msg_queue/mq_open.c)
