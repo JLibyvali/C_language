@@ -7,6 +7,7 @@
 
 int main()
 {
+    printf(FMT("################## Test open a message queue ##########3\n", YELLOW));
     struct mq_attr mq_attr_set;
 
     mqd_t          mq_fd = mq_open("/mq_first", O_RDONLY);
